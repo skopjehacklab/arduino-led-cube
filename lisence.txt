@@ -1,0 +1,5 @@
+Created by Christian Moen (christian@lynet.no) and Ståle Kristoffersen (staalekb@ifi.uio.no) 2011.
+
+Lisence:  http://creativecommons.org/licenses/by-nc-sa/3.0/
+
+Happy hacking!! :D
