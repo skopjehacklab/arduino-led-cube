@@ -13,12 +13,18 @@ void launch_effect (int effect)
     switch (effect)
     {
         case 0x00:
-            effect_rain(100);
+            effect_planboing (AXIS_Z, 400);
+            effect_planboing (AXIS_X, 400);
+            effect_planboing (AXIS_Y, 400);
+            effect_planboing (AXIS_Z, 400);
+            effect_planboing (AXIS_X, 400);
+            effect_planboing (AXIS_Y, 400);
+            fill(0x00);
             break;
 
 
         case 1:
-            sendvoxels_rand_z(20,220,2000);
+            effect_stringfly2("HACKLAB KIKA");
             break;
 
         case 2:
@@ -53,13 +59,7 @@ void launch_effect (int effect)
             break;
 
         case 7:
-            effect_planboing (AXIS_Z, 400);
-            effect_planboing (AXIS_X, 400);
-            effect_planboing (AXIS_Y, 400);
-            effect_planboing (AXIS_Z, 400);
-            effect_planboing (AXIS_X, 400);
-            effect_planboing (AXIS_Y, 400);
-            fill(0x00);
+            effect_rain(100);
             break;
 
         case 8:
@@ -91,7 +91,7 @@ void launch_effect (int effect)
 
 
         case 12:
-            effect_stringfly2("INSTRUCTABLES");
+            sendvoxels_rand_z(20,220,2000);
             break;
 
         case 13:
