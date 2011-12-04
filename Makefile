@@ -40,7 +40,7 @@
 
 
 # MCU name
-MCU = atmega32
+MCU = atmega328p
 #MCU = attiny13
 
 
@@ -51,7 +51,7 @@ MCU = atmega32
 #     automatically to create a 32-bit value in your source code.
 #F_CPU = 8000000
 #1.8432*8*1000000
-F_CPU = 14745600
+F_CPU = 16000000
 
 # Output format. (can be srec, ihex, binary)
 FORMAT = ihex
@@ -199,7 +199,7 @@ LDFLAGS += $(PRINTF_LIB) $(SCANF_LIB) $(MATH_LIB)
 #
 # Type: avrdude -c ?
 # to get a full listing.
-AVRDUDE_PROGRAMMER = usbtiny
+AVRDUDE_PROGRAMMER = arduino
 #AVRDUDE_PROGRAMMER = ponyser
 
 # com1 = serial port. Use lpt1 to connect to parallel port.
@@ -222,7 +222,7 @@ AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
 # Increase verbosity level.  Please use this when submitting bug
 # reports about avrdude. See <http://savannah.nongnu.org/projects/avrdude>
 # to submit bug reports.
-#AVRDUDE_VERBOSE = -v -v
+AVRDUDE_VERBOSE = -v -v
 
 AVRDUDE_FLAGS = -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER)
 AVRDUDE_FLAGS += $(AVRDUDE_NO_VERIFY)
@@ -380,7 +380,7 @@ gdb-config:
 	@echo target remote $(DEBUG_HOST):$(DEBUG_PORT)  >> $(GDBINIT_FILE)
 ifeq ($(DEBUG_BACKEND),simulavr)
 	@echo load  >> $(GDBINIT_FILE)
-endif	
+endif
 	@echo break main >> $(GDBINIT_FILE)
 
 debug: gdb-config $(TARGET).elf
@@ -507,8 +507,3 @@ clean_list :
 .PHONY : all begin finish end sizebefore sizeafter gccversion \
 build elf hex eep lss sym coff extcoff \
 clean clean_list program debug gdb-config
-
-install:
-	avrdude -c usbtiny -p m32 -B 1 -U flash:w:main.hex
-	avrdude -c usbtiny -p m32 -B 1 -U eeprom:w:main.eep
-
