@@ -6,3 +6,4 @@
 *.eep
 *.elf
 *.hex
+.dep/
