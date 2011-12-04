@@ -1226,8 +1226,7 @@ void effect_rand_patharound (int iterations, int delay)
 
 void effect_pathspiral (int iterations, int delay)
 {
-	int z, i;
-	z = 4;
+	int i;
 	unsigned char path[16];
 	
 	font_getpath(1,path,16);
