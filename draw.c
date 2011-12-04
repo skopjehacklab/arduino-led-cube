@@ -351,7 +351,6 @@ void line(int x1, int y1, int z1, int x2, int y2, int z2)
 	float xy;	// how many voxels do we move on the y axis for each step on the x axis
 	float xz;	// how many voxels do we move on the y axis for each step on the x axis 
 	unsigned char x,y,z;
-	unsigned char lasty,lastz;
 
 	// We always want to draw the line from x=0 to x=7.
 	// If x1 is bigget than x2, we need to flip all the values.
@@ -367,21 +366,17 @@ void line(int x1, int y1, int z1, int x2, int y2, int z2)
 	if (y1>y2)
 	{
 		xy = (float)(y1-y2)/(float)(x2-x1);
-		lasty = y2;
 	} else
 	{
 		xy = (float)(y2-y1)/(float)(x2-x1);
-		lasty = y1;
 	}
 
 	if (z1>z2)
 	{
 		xz = (float)(z1-z2)/(float)(x2-x1);
-		lastz = z2;
 	} else
 	{
 		xz = (float)(z2-z1)/(float)(x2-x1);
-		lastz = z1;
 	}
 
 
