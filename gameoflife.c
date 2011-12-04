@@ -25,8 +25,6 @@ void gol_play (int iterations, uint16_t delay)
 	
 	for (i = 0; i < iterations; i++)
 	{
-		LED_PORT ^= LED_GREEN;
-	
 		gol_nextgen();
 		
 		if (gol_count_changes() == 0)

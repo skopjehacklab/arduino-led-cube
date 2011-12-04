@@ -885,7 +885,6 @@ void effect_boxside_randsend_parallel (char axis, int origin, int delay, int mod
 		
 		delay_ms(delay);
 		draw_positions_axis(axis,cubepos,0);
-		LED_PORT ^= LED_RED;
 	}
 	
 }

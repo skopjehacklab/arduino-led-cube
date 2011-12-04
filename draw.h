@@ -8,17 +8,6 @@
 
 extern const unsigned char font[480];
 
-// Red led on D2
-#define LED_RED 0x04
-// Green led D3
-#define LED_GREEN 0x08
-// Program led on D4
-#define LED_PGM 0x10;
-// Leds connected to port D
-#define LED_PORT PORTD
-// Programming button on D5
-#define PGM_BTN 0x20
-
 void delay_ms (uint16_t x);
 
 
