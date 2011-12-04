@@ -204,7 +204,7 @@ AVRDUDE_PROGRAMMER = arduino
 
 # com1 = serial port. Use lpt1 to connect to parallel port.
 #AVRDUDE_PORT = lpt1
-#AVRDUDE_PORT = COM1
+AVRDUDE_PORT = /dev/ttyUSB0
 
 AVRDUDE_WRITE_FLASH = -U flash:w:$(TARGET).hex
 #AVRDUDE_WRITE_EEPROM = -U eeprom:w:$(TARGET).eep
@@ -228,7 +228,7 @@ AVRDUDE_FLAGS = -p $(MCU) -P $(AVRDUDE_PORT) -c $(AVRDUDE_PROGRAMMER)
 AVRDUDE_FLAGS += $(AVRDUDE_NO_VERIFY)
 AVRDUDE_FLAGS += $(AVRDUDE_VERBOSE)
 AVRDUDE_FLAGS += $(AVRDUDE_ERASE_COUNTER)
-
+AVRDUDE_FLAGS += -b 57600
 
 
 #---------------- Debugging Options ----------------
