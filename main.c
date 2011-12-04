@@ -99,12 +99,12 @@ void setup(void) {
     setup_usart();
     reset_layer_counter();
     init_isr_timers();
+    current_layer = 0;
     sei();
 }
 
 int main (void) {
     setup();
-    current_layer = 1;
     while (1) {
         // Show the effects in a predefined order
         for (int i=0; i<EFFECTS_TOTAL; i++)
