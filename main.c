@@ -18,7 +18,9 @@ void reset_layer_counter(void) { // non-inverting
     PORTC &= ~_BV(PC5);
 }
 
-
+/*
+ * output a single byte to a buffer specified by addr (0-7)
+ */
 void output_data(uint8_t addr, uint8_t data) {
     PORTC = addr;
 
